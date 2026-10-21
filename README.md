@@ -10,7 +10,22 @@ print(landing_quality(trace[-1]))
 PY
 ```
 
-The dynamics include gravity, mass, fuel depletion, actuator saturation, and stochastic lateral gusts. Runs are seeded so controller changes can be compared against identical disturbances.
+The dynamics include gravity, mass, fuel depletion, actuator saturation, and stochastic lateral gusts. Runs are seeded so controller changes can be compared against identical disturbances. A reproducible stress harness perturbs altitude, crossrange, velocity, attitude, angular rate, fuel, and wind, then reports the soft-landing rate and worst touchdown rather than showcasing one ideal descent.
+
+## Distinctive edge
+
+The controller combines a height-dependent stopping envelope with bounded
+throttle, gimbal, translation, and attitude feedback. Its contribution is the
+way landing guidance and validation are tied together: the same controller is
+judged across a seeded uncertainty envelope, including actuator and fuel
+margins, so a beautiful nominal trajectory cannot hide a brittle landing law.
+
+`reliability_driven_tuning` adds a reliability-driven offline optimization
+layer inspired by recent research on landing under stochastic winds. It searches
+stopping-envelope and feedback parameters across one wind/state ensemble, then
+reports performance on a separate holdout ensemble. That provides an honest
+within-model comparison against the untuned baseline without claiming access to
+or superiority over proprietary flight software.
 
 ## Engineering questions
 
