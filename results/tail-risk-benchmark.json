@@ -1,0 +1,40 @@
+{
+  "method": "Empirical tail-aware policy selection; 20 candidates",
+  "seed": 101,
+  "holdout_seed": 100101,
+  "selected": {
+    "stopping_factor": 1.5,
+    "vertical_gain": 0.9
+  },
+  "training": {
+    "trials": 80,
+    "successful_landings": 52,
+    "success_rate": 0.65,
+    "success_lower_95": 0.5407980232189243,
+    "tail_touchdown_speed": 3.3787407139855086,
+    "worst_pad_error": 45.38655049715224,
+    "mean_fuel_used": 0.5122904794993852,
+    "minimum_fuel_remaining": 0.2682076216717455
+  },
+  "baseline_holdout": {
+    "trials": 200,
+    "successful_landings": 103,
+    "success_rate": 0.515,
+    "success_lower_95": 0.44610724474630287,
+    "tail_touchdown_speed": 3.6908917176971014,
+    "worst_pad_error": 42.14162333808965,
+    "mean_fuel_used": 0.46917603075912057,
+    "minimum_fuel_remaining": 0.3165070939944064
+  },
+  "selected_holdout": {
+    "trials": 200,
+    "successful_landings": 111,
+    "success_rate": 0.555,
+    "success_lower_95": 0.4857317563236392,
+    "tail_touchdown_speed": 3.6095806299182867,
+    "worst_pad_error": 43.401578714196404,
+    "mean_fuel_used": 0.5063077522049516,
+    "minimum_fuel_remaining": 0.27541792278046595
+  },
+  "scope": "Planar Earth-gravity simulation, fixed mass, synthetic winds; no hardware or company comparison"
+}
